@@ -9,6 +9,7 @@ import Contact from './components/Contact';
 import CursorFollower from './components/CursorFollower';
 import Preloader from './components/Preloader';
 import InteractiveBackground from './components/InteractiveBackground';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -79,6 +80,7 @@ function App() {
         <Projects />
         <Contact />
       </main>
+      <ScrollToTop />
     </div>
   );
 }
