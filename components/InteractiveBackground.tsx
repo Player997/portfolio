@@ -45,7 +45,7 @@ const InteractiveBackground: React.FC<BackgroundProps> = ({ isDarkMode }) => {
     
     let particleColors = getColors();
 
-    class Blob {
+    class BackgroundBlob {
       x: number;
       y: number;
       vx: number;
@@ -150,7 +150,7 @@ const InteractiveBackground: React.FC<BackgroundProps> = ({ isDarkMode }) => {
       }
     }
 
-    const blobs = [new Blob(), new Blob(), new Blob(), new Blob(), new Blob()];
+    const blobs = [new BackgroundBlob(), new BackgroundBlob(), new BackgroundBlob(), new BackgroundBlob(), new BackgroundBlob()];
     const particles: Particle[] = [];
     for (let i = 0; i < particleCount; i++) {
       particles.push(new Particle());

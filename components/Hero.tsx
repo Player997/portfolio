@@ -7,8 +7,15 @@ const Hero: React.FC = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
+  const [isVisible, setIsVisible] = useState(false);
 
   const roles = ["AI & ML Engineer", "Full Stack Developer", "Data Scientist", "Problem Solver"];
+
+  useEffect(() => {
+    // Trigger animation shortly after mount
+    const timer = setTimeout(() => setIsVisible(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const handleTyping = () => {
@@ -54,7 +61,7 @@ const Hero: React.FC = () => {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center">
         
         {/* Status Badge */}
-        <div className="reveal inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 mb-8 hover:bg-black/10 dark:hover:bg-white/10 transition-colors cursor-default">
+        <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 mb-8 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-1000 ease-out transform cursor-default ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
@@ -62,24 +69,24 @@ const Hero: React.FC = () => {
           <span className="text-xs font-medium text-muted tracking-wide">AVAILABLE FOR WORK</span>
         </div>
 
-        <h1 className="reveal reveal-delay-100 text-6xl md:text-8xl font-bold tracking-tight mb-6">
+        <h1 className={`text-6xl md:text-8xl font-bold tracking-tight mb-6 transition-all duration-1000 delay-100 ease-out transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
           <span className="text-text">Building the</span> <br />
           <span className="bg-gradient-to-r from-primary via-purple-400 to-secondary bg-clip-text text-transparent">
             Future of Tech
           </span>
         </h1>
 
-        <div className="reveal reveal-delay-200 h-8 mb-6 text-xl md:text-2xl font-mono text-primary/80">
+        <div className={`h-8 mb-6 text-xl md:text-2xl font-mono text-primary/80 transition-all duration-1000 delay-200 ease-out transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
            &lt; {text} <span className="animate-pulse">|</span> /&gt;
         </div>
 
-        <p className="reveal reveal-delay-200 max-w-2xl text-xl text-muted leading-relaxed mb-10">
+        <p className={`max-w-2xl text-xl text-muted leading-relaxed mb-10 transition-all duration-1000 delay-300 ease-out transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
           Hi, I'm <span className="text-text font-semibold">{PERSONAL_INFO.name}</span>. 
           I bridge the gap between complex <span className="text-text/80">Data Science</span> algorithms 
           and intuitive <span className="text-text/80">Full Stack</span> experiences.
         </p>
         
-        <div className="reveal reveal-delay-300 flex flex-col sm:flex-row gap-4 w-full sm:w-auto items-center justify-center">
+        <div className={`flex flex-col sm:flex-row gap-4 w-full sm:w-auto items-center justify-center transition-all duration-1000 delay-500 ease-out transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
           <a 
             href="#projects"
             onClick={(e) => handleNavClick(e, '#projects')}
@@ -100,7 +107,7 @@ const Hero: React.FC = () => {
           </a>
         </div>
 
-        <div className="reveal reveal-delay-300 mt-16 flex gap-6">
+        <div className={`mt-16 flex gap-6 transition-all duration-1000 delay-700 ease-out transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
           <a href={PERSONAL_INFO.github} target="_blank" rel="noreferrer" className="text-muted hover:text-text transition-colors hover:scale-110 duration-300">
             <Github size={24} />
           </a>

@@ -7,315 +7,317 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --gray-900: #111827;
-            --gray-800: #1f2937;
-            --gray-700: #374151;
-            --gray-600: #4b5563;
-            --gray-400: #9ca3af;
-            --gray-300: #d1d5db;
-            --gray-100: #f3f4f6;
-            --blue-600: #2563eb;
-            --white: #ffffff;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --accent: #be1e2d; /* Professional Resume Red/Maroon */
+            --bg: #ffffff;
+            --border: #e5e7eb;
         }
         
-        * { box-sizing: border-box; }
-        
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--gray-100);
+            background: #f3f4f6;
             margin: 0;
             padding: 40px 20px;
-            color: var(--gray-800);
-            line-height: 1.5;
+            color: var(--text-main);
             -webkit-font-smoothing: antialiased;
         }
 
-        .container {
+        .resume-page {
             max-width: 210mm;
+            min-height: 297mm;
             margin: 0 auto;
-            background-color: var(--white);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            padding: 48px;
+            background: white;
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.15);
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 40px;
         }
 
         /* Typography */
         h1 {
-            font-size: 2.25rem;
-            line-height: 2.5rem;
-            font-weight: 700;
+            color: var(--accent);
+            font-size: 32px;
+            font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 0.025em;
-            color: var(--gray-900);
-            margin: 0 0 0.5rem 0;
+            margin: 20px 0 15px 0;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
         }
 
         h2 {
-            font-size: 1.125rem;
+            color: var(--accent);
+            font-size: 14px;
             font-weight: 700;
             text-transform: uppercase;
-            border-bottom: 1px solid var(--gray-300);
-            margin: 0 0 1rem 0;
-            padding-bottom: 0.5rem;
-            letter-spacing: 0.05em;
-            color: var(--gray-900);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 5px;
+            margin: 30px 0 15px 0;
+            letter-spacing: 0.5px;
         }
 
         h3 {
-            font-size: 1rem;
+            font-size: 16px;
             font-weight: 700;
-            color: var(--gray-900);
-            margin: 0;
+            margin: 0 0 5px 0;
+            color: #111;
         }
 
-        p { margin: 0 0 0.5rem 0; font-size: 0.875rem; color: var(--gray-700); }
+        p, li {
+            font-size: 13px;
+            line-height: 1.5;
+            color: #374151;
+        }
+
+        ul {
+            padding-left: 18px;
+            margin: 5px 0 15px 0;
+        }
         
-        a { color: inherit; text-decoration: none; }
-        a:hover { color: var(--blue-600); text-decoration: underline; }
-
-        .text-sm { font-size: 0.875rem; }
-        .text-xs { font-size: 0.75rem; }
-        .font-medium { font-weight: 500; }
-        .font-bold { font-weight: 700; }
-        .text-gray-600 { color: var(--gray-600); }
-        .text-blue-600 { color: var(--blue-600); }
-
-        /* Layout Utilities */
-        .mb-2 { margin-bottom: 0.5rem; }
-        .mb-4 { margin-bottom: 1rem; }
-        .mb-6 { margin-bottom: 1.5rem; }
-        .mb-8 { margin-bottom: 2rem; }
-        .mt-2 { margin-top: 0.5rem; }
-        .mt-12 { margin-top: 3rem; }
-
-        .flex { display: flex; }
-        .flex-col { flex-direction: column; }
-        .items-center { align-items: center; }
-        .justify-between { justify-content: space-between; }
-        .gap-1 { gap: 0.25rem; }
-        .gap-2 { gap: 0.5rem; }
-        .gap-4 { gap: 1rem; }
-        .gap-8 { gap: 2rem; }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+        li {
+            margin-bottom: 4px;
         }
 
-        /* Header */
-        header {
-            border-bottom: 2px solid var(--gray-800);
-            padding-bottom: 1.5rem;
-            margin-bottom: 2rem;
+        a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Left Column Styles */
+        .profile-img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 4px;
+            background: #e5e7eb;
+            margin-bottom: 10px;
+            border: 1px solid #d1d5db;
         }
 
-        .header-contact {
+        .contact-info {
+            font-size: 13px;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .contact-label {
+            font-weight: 600;
+            color: #111;
+        }
+
+        .left-section p {
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        /* Right Column Styles */
+        .section-content {
+            margin-bottom: 25px;
+        }
+
+        .edu-block {
+            margin-bottom: 15px;
+        }
+
+        .sub-header {
             display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: var(--gray-600);
-            align-items: center;
+            justify-content: space-between;
+            font-size: 13px;
+            color: #4b5563;
+            margin-bottom: 5px;
         }
 
-        .separator { display: none; color: var(--gray-400); }
+        .bold { font-weight: 700; color: #111; }
+        .tech-stack { font-weight: 600; color: #1f2937; }
 
-        /* Lists */
-        ul { margin: 0.5rem 0 0 1.25rem; padding: 0; }
-        li { list-style-type: disc; margin-bottom: 0.25rem; font-size: 0.875rem; color: var(--gray-700); }
-
-        /* Components */
-        .project-item { margin-bottom: 1.25rem; }
-        .tech-stack { font-style: italic; color: var(--gray-600); }
-        .tech-label { font-weight: 500; font-style: normal; color: var(--gray-800); }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background-color: var(--gray-900);
+        /* Print Button */
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #1f2937;
             color: white;
-            padding: 0.75rem 2rem;
-            border-radius: 0.5rem;
-            font-weight: 500;
-            transition: background-color 0.2s;
-            cursor: pointer;
             border: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.2s, background 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 100;
         }
-        .btn:hover { background-color: var(--gray-800); }
-
-        /* Media Queries */
-        @media (min-width: 768px) {
-            .md-row { flex-direction: row; }
-            .separator { display: inline; }
-            .print-hidden { display: block; }
+        .print-btn:hover {
+            transform: translateY(-2px);
+            background: #111;
+        }
+        .print-btn svg {
+            width: 18px;
+            height: 18px;
         }
 
+        /* Responsive */
+        @media (max-width: 768px) {
+            body { padding: 0; }
+            .resume-page {
+                display: flex;
+                flex-direction: column;
+                padding: 25px;
+                width: 100%;
+                gap: 20px;
+                box-shadow: none;
+            }
+            .print-btn {
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+        
         @media print {
             body { background: white; padding: 0; }
-            .container { box-shadow: none; padding: 0; width: 100%; max-width: none; }
+            .resume-page { box-shadow: none; margin: 0; width: 100%; padding: 40px; }
             .no-print { display: none !important; }
             a { text-decoration: none; color: black; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header>
-            <h1>Aditya Verma</h1>
-            <div class="header-contact md-row">
-                <span>Gurugram, Haryana, 122001</span>
-                <span class="separator">|</span>
-                <a href="mailto:adityaverma5069@gmail.com">adityaverma5069@gmail.com</a>
-                <span class="separator">|</span>
-                <span>+91 9354138042</span>
-            </div>
-            <div class="flex gap-4 mt-2 text-sm font-medium text-blue-600">
-                <a href="https://www.linkedin.com/in/aditya-verma-aa8178288/" target="_blank" class="flex items-center gap-1">
-                    LinkedIn Profile
-                </a>
-                <a href="https://github.com/Player997" target="_blank" class="flex items-center gap-1">
-                    GitHub Profile
-                </a>
-            </div>
-        </header>
+    <button onclick="window.print()" class="print-btn no-print">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+        </svg>
+        Download PDF
+    </button>
 
-        <!-- Professional Summary -->
-        <section class="mb-8">
-            <h2>Professional Summary</h2>
-            <p style="text-align: justify;">
-                Enthusiastic Computer Science Engineer and Web Developer with practical experience in full-stack development, machine learning, and data science. Skilled in building responsive, user-focused web applications and intelligent systems. Passionate about leveraging technology to develop innovative solutions that simplify and enhance digital experiences. Eager to learn, adapt, and contribute to impactful projects in the tech industry.
-            </p>
-        </section>
-
-        <!-- Technical Competencies -->
-        <section class="mb-8">
-            <h2>Technical Competencies</h2>
-            <div class="text-sm text-gray-700" style="line-height: 1.6;">
-                <span class="font-bold text-gray-900">Core Stack:</span> HTML5, CSS3, Tailwind CSS, JavaScript, Node.js, Express.js, React.js, Next.js<br>
-                <span class="font-bold text-gray-900">Backend & DB:</span> SQL, PostgreSQL, Python, Java<br>
-                <span class="font-bold text-gray-900">DevOps & Tools:</span> C++, Docker, Kubernetes, GitHub, Git, Figma, Framer
-            </div>
-        </section>
-
-        <!-- Projects -->
-        <section class="mb-8">
-            <h2>Projects</h2>
+    <div class="resume-page">
+        <!-- Left Sidebar -->
+        <div class="left-col">
+            <img src="https://github.com/Player997.png" alt="Aditya Verma" class="profile-img">
             
-            <div class="project-item">
-                <div class="flex justify-between items-center">
-                    <h3>Expense tracker WebApp</h3>
+            <h1>Aditya Verma</h1>
+            
+            <div class="contact-info">
+                <div>Address: Gurugram, Haryana, 122001</div>
+                <div>E-mail: <a href="mailto:adityaverma5069@gmail.com">adityaverma5069@gmail.com</a></div>
+                <div>Phone: +91 9354138042</div>
+                <div style="margin-top: 8px;">LinkedIn: <a href="https://www.linkedin.com/in/aditya-verma-aa8178288/" target="_blank">Profile Link</a></div>
+                <div>GitHub: <a href="https://github.com/Player997" target="_blank">Profile Link</a></div>
+            </div>
+
+            <div class="left-section">
+                <h2>Professional Summary</h2>
+                <p style="text-align: justify;">
+                    Enthusiastic Computer Science Engineer and Web Developer with practical experience in full-stack development, machine learning, and data science. Skilled in building responsive, user-focused web applications and intelligent systems. Passionate about leveraging technology to develop innovative solutions that simplify and enhance digital experiences. Eager to learn, adapt, and contribute to impactful projects in the tech industry.
+                </p>
+
+                <h2>Technical Competencies</h2>
+                <p>
+                    HTML5 | CSS3 | Tailwind CSS | JavaScript | Node.js | Express.js | React.js | Next.js | SQL | PostgreSQL | C++ | Docker | Kubernetes | Python | Java | GitHub | Git | Figma | Framer
+                </p>
+
+                <h2>Interpersonal Skills</h2>
+                <p>Team Leadership | Decision Making | Problem Solving | Critical Thinking</p>
+
+                <h2>Interests & Hobbies</h2>
+                <p>Gaming | Music | Photography | Video editing</p>
+
+                <h2>Languages Known</h2>
+                <p>English | Hindi | Rajasthani | Haryanvi</p>
+
+                <h2>Personal Details</h2>
+                <p>
+                    Mother's Name: Mamta<br>
+                    Father' Name: Sanjay Kumar<br>
+                    D.O.B.: 24/11/2004
+                </p>
+            </div>
+        </div>
+
+        <!-- Right Content -->
+        <div class="right-col">
+            <h2 style="margin-top: 0;">Education</h2>
+            <div class="section-content">
+                <div class="edu-block">
+                    <div class="bold">Bachelor of Engineering in CSE (Hons.) with AI & ML (IBM)</div>
+                    <div>Chandigarh University, Gharuan, Punjab</div>
+                    <div class="sub-header">
+                        <span>Session: 2022-2026</span>
+                        <span>Score: 7.48 CGPA</span>
+                    </div>
                 </div>
+
+                <div class="edu-block">
+                    <div class="bold">Intermediate (CBSE)</div>
+                    <div>SCR Public School, Gurugram, Haryana</div>
+                    <div class="sub-header">
+                        <span>Session: 2021-2022</span>
+                        <span>Percentage: 77.8%</span>
+                    </div>
+                </div>
+
+                <div class="edu-block">
+                    <div class="bold">Matriculation (CBSE)</div>
+                    <div>SCR Public School, Gurugram, Haryana</div>
+                    <div class="sub-header">
+                        <span>Session: 2019-2020</span>
+                        <span>Percentage: 86.83%</span>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Training & Projects</h2>
+            
+            <div class="section-content">
+                <h3>Expense tracker WebApp</h3>
                 <ul>
                     <li>Developed a responsive expense tracking application with real-time data updates.</li>
                     <li>Users can add, edit, delete, and categorize expenses and view detailed summaries.</li>
                     <li>Integrated Firebase for user authentication (Google OAuth and email/password login).</li>
                     <li>Implemented secure session management and real-time database syncing.</li>
-                    <li class="tech-stack"><span class="tech-label">Tech Stack:</span> React, Vite.js, Tailwind CSS, Node.js, Express.js, Firebase.</li>
+                    <li><span class="tech-stack">Tech Stack:</span> React, Vite.js, Tailwind CSS, Node.js, Express.js, Firebase.</li>
                 </ul>
             </div>
 
-            <div class="project-item">
-                <div class="flex justify-between items-center">
-                    <h3>Anime Streaming Website</h3>
-                </div>
+            <div class="section-content">
+                <h3>Anime Streaming Website</h3>
                 <ul>
                     <li>Built a modern anime-streaming UI with a clean dark theme and responsive card-based layout.</li>
                     <li>Added genre navigation, search UI, and reusable React components for consistent design.</li>
                     <li>Optimized UI performance using Vite and Tailwind CSS.</li>
-                    <li class="tech-stack"><span class="tech-label">Tech Stack:</span> React, Vite, Tailwind CSS.</li>
+                    <li><span class="tech-stack">Tech Stack:</span> React, Vite, Tailwind CSS.</li>
                 </ul>
             </div>
 
-            <div class="project-item">
-                <div class="flex justify-between items-center">
-                    <h3>Task Scheduler & To-Do Web App</h3>
-                </div>
+            <div class="section-content">
+                <h3>Task Scheduler & To-Do Web App</h3>
                 <ul>
                     <li>Developed a simple, clean task manager with add, delete, and complete-task features.</li>
                     <li>Designed a responsive interface with smooth interactions and dark mode support.</li>
                     <li>Used localStorage for data persistence without backend dependency.</li>
-                    <li class="tech-stack"><span class="tech-label">Tech Stack:</span> HTML, CSS, JavaScript.</li>
+                    <li><span class="tech-stack">Tech Stack:</span> HTML, CSS, JavaScript.</li>
                 </ul>
             </div>
-        </section>
 
-        <!-- Education -->
-        <section class="mb-8">
-            <h2>Education</h2>
-            <div class="mb-4">
-                <div class="flex justify-between font-bold text-sm text-gray-900">
-                    <span>Bachelor of Engineering in CSE (Hons.) with AI & ML (IBM)</span>
-                    <span>2022 - 2026</span>
-                </div>
-                <div class="flex justify-between text-sm text-gray-600">
-                    <span>Chandigarh University, Gharuan, Punjab</span>
-                    <span>CGPA: 7.48</span>
-                </div>
-            </div>
-            <div class="mb-4">
-                <div class="flex justify-between font-bold text-sm text-gray-900">
-                    <span>Intermediate (CBSE)</span>
-                    <span>2021 - 2022</span>
-                </div>
-                <div class="flex justify-between text-sm text-gray-600">
-                    <span>SCR Public School, Gurugram, Haryana</span>
-                    <span>Percentage: 77.8%</span>
-                </div>
-            </div>
-            <div>
-                <div class="flex justify-between font-bold text-sm text-gray-900">
-                    <span>Matriculation (CBSE)</span>
-                    <span>2019 - 2020</span>
-                </div>
-                <div class="flex justify-between text-sm text-gray-600">
-                    <span>SCR Public School, Gurugram, Haryana</span>
-                    <span>Percentage: 86.83%</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Certifications -->
-        <section class="mb-8">
             <h2>Certifications & Awards</h2>
             <ul>
-                <li><span class="font-bold">Artificial Intelligence Analyst</span> | IBM | April 2025</li>
-                <li><span class="font-bold">Generative AI for Data Analysis</span> | Coursera | March 2025</li>
-                <li><span class="font-bold">Introduction to Generative AI</span> | LinkedIn Learning | Aug 2024</li>
-                <li><span class="font-bold">Data Analytics and Visualization Job Simulation</span> | Forage | July 2024</li>
-                <li><span class="font-bold">OCI 2024 Generative AI Certified Professional</span> | Oracle | June 2024</li>
-                <li><span class="font-bold">Trust and Security with Google Cloud</span> | Udacity | July 2024</li>
-                <li><span class="font-bold">Python for Data Science, AI & Development</span> | Coursera | April 2024</li>
+                <li><span class="bold">Introduction to Generative AI</span> | LinkedIn Learning | Aug 2024</li>
+                <li><span class="bold">Generative AI for Data Analysis</span> | Coursera | March 2025</li>
+                <li><span class="bold">Artificial Intelligence Analyst</span> | IBM | April 2025</li>
+                <li><span class="bold">Data Analytics and Visualization Job Simulation</span> | Forage | July 2024</li>
+                <li><span class="bold">Oracle Cloud Infrastructure 2024 Generative AI Certified professional</span> | Oracle | June 2024</li>
+                <li><span class="bold">Trust and Security with Google Cloud</span> | Udacity | July 2024</li>
+                <li><span class="bold">Python for Data Science, AI & Development</span> | Coursera | April 2024</li>
             </ul>
-        </section>
-
-        <!-- Personal Info & Skills -->
-        <div class="grid-2">
-            <div>
-                <h2 style="font-size: 0.875rem; border-bottom: 1px solid var(--gray-300); margin-bottom: 0.5rem; padding-bottom: 0.25rem;">Interests</h2>
-                <p>Gaming, Music, Photography, Video editing</p>
-            </div>
-            <div>
-                <h2 style="font-size: 0.875rem; border-bottom: 1px solid var(--gray-300); margin-bottom: 0.5rem; padding-bottom: 0.25rem;">Languages</h2>
-                <p>English, Hindi, Rajasthani, Haryanvi</p>
-            </div>
-            <div>
-                 <h2 style="font-size: 0.875rem; border-bottom: 1px solid var(--gray-300); margin-bottom: 0.5rem; padding-bottom: 0.25rem;">Personal Details</h2>
-                 <p>
-                    Father: Sanjay Kumar<br>
-                    DOB: 24/11/2004
-                 </p>
-            </div>
-        </div>
-
-        <div class="mt-12 no-print" style="text-align: center;">
-            <button onclick="window.print()" class="btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Save as PDF
-            </button>
-            <p class="mt-2 text-xs text-gray-400">Tip: Select "Save as PDF" in the print destination.</p>
         </div>
     </div>
 </body>

@@ -92,13 +92,18 @@ const CursorFollower: React.FC<CursorProps> = ({ isDarkMode }) => {
       lastMousePos.current = { x: e.clientX, y: e.clientY };
       setTargetPosition({ x: e.clientX, y: e.clientY });
       
-      const target = e.target as HTMLElement;
-      const isClickable = 
-        target.tagName.toLowerCase() === 'a' || 
-        target.tagName.toLowerCase() === 'button' ||
-        target.closest('a') !== null ||
-        target.closest('button') !== null ||
-        target.classList.contains('cursor-pointer');
+      const target = e.target;
+      let isClickable = false;
+
+      // Safe check for Element type before accessing closest/classList
+      if (target instanceof Element) {
+         isClickable = 
+            target.tagName.toLowerCase() === 'a' || 
+            target.tagName.toLowerCase() === 'button' ||
+            target.closest('a') !== null ||
+            target.closest('button') !== null ||
+            target.classList.contains('cursor-pointer');
+      }
         
       setIsHovering(isClickable);
     };

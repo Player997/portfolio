@@ -31,10 +31,13 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleTheme }) => {
     const element = document.querySelector(href);
     if (element) {
       const offsetTop = element.getBoundingClientRect().top + window.scrollY;
+      
       window.scrollTo({
-        top: offsetTop - 100, 
+        top: offsetTop - 100, // Offset to account for the floating navbar
         behavior: 'smooth'
       });
+      
+      // Update the URL without causing a page jump
       window.history.pushState(null, '', href);
     }
   };

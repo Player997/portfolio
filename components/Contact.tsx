@@ -42,19 +42,42 @@ const Contact: React.FC = () => {
     return isValid;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (validate()) {
       setIsSubmitting(true);
       
-      // Simulate API call
-      setTimeout(() => {
+      try {
+        const response = await fetch(`https://formsubmit.co/ajax/${PERSONAL_INFO.email}`, {
+          method: "POST",
+          headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+            _subject: `Portfolio Contact from ${formData.name}`,
+            _template: 'table'
+          })
+        });
+
+        if (response.ok) {
+          setIsSuccess(true);
+          setFormData({ name: '', email: '', message: '' });
+          setTimeout(() => setIsSuccess(false), 5000);
+        } else {
+          console.error("Form submission failed");
+          // Fallback to basic alert if service is down, though UI remains resilient
+          alert("Something went wrong. Please try contacting me directly via email.");
+        }
+      } catch (error) {
+        console.error("Network error:", error);
+        alert("Network error. Please try again later.");
+      } finally {
         setIsSubmitting(false);
-        setIsSuccess(true);
-        setFormData({ name: '', email: '', message: '' });
-        
-        setTimeout(() => setIsSuccess(false), 5000);
-      }, 2000);
+      }
     }
   };
 

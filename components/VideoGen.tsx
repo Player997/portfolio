@@ -26,8 +26,14 @@ const VideoGen: React.FC = () => {
           }
       }
 
+      // Safe access to process.env
+      const apiKey = (typeof process !== 'undefined' && process.env) ? process.env.API_KEY : '';
+      if (!apiKey) {
+         throw new Error("API Key not found in environment variables");
+      }
+
       // Initialize right before call to capture the key
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+      const ai = new GoogleGenAI({ apiKey });
       
       setStatus('Dreaming up visuals (this may take 1-2 minutes)...');
       
@@ -60,7 +66,7 @@ const VideoGen: React.FC = () => {
       setStatus('Downloading video...');
       
       // Fetch with key
-      const response = await fetch(`${downloadLink}&key=${process.env.API_KEY}`);
+      const response = await fetch(`${downloadLink}&key=${apiKey}`);
       if (!response.ok) throw new Error('Failed to download video');
       
       const blob = await response.blob();
