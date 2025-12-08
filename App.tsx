@@ -8,6 +8,7 @@ import Timeline from './components/Timeline';
 import Contact from './components/Contact';
 import CursorFollower from './components/CursorFollower';
 import Preloader from './components/Preloader';
+import InteractiveBackground from './components/InteractiveBackground';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -40,10 +41,11 @@ function App() {
   }
 
   return (
-    <div className="bg-dark min-h-screen text-slate-200 selection:bg-primary/30 cursor-default">
+    <div className="bg-dark min-h-screen text-slate-200 selection:bg-primary/30 cursor-default relative">
+      <InteractiveBackground />
       <CursorFollower />
       <Navbar />
-      <main>
+      <main className="relative z-10">
         <Hero />
         <About />
         <Skills />

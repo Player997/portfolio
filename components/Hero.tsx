@@ -50,9 +50,7 @@ const Hero: React.FC = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-40 pb-10 overflow-hidden">
       
-      {/* Abstract Background Shapes */}
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] animate-pulse" />
-      <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[120px] animate-pulse delay-700" />
+      {/* Background is now handled by InteractiveBackground component in App.tsx */}
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center">
         
