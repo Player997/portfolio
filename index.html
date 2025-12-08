@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth scroll-pt-24">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aditya Verma | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              primary: '#818cf8', // Indigo 400
+              secondary: '#c084fc', // Purple 400
+              dark: '#0a0a0a', // Neutral 950
+              card: '#171717', // Neutral 900
+              surface: '#262626', // Neutral 800
+              text: '#ededed', // Neutral 100
+              muted: '#a3a3a3', // Neutral 400
+            },
+            backgroundImage: {
+              'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #0a0a0a;
+        color: #ededed;
+        background-image: radial-gradient(circle at 50% 0%, #1a1a2e 0%, #0a0a0a 100%);
+        min-height: 100vh;
+        cursor: none; /* Hide default cursor if you want full immersion, but usually keeping it + follower is better. Let's keep default cursor visible for usability */
+      }
+      
+      @media (min-width: 768px) {
+        body {
+            /* Optional: Hide default cursor on desktop to let the character shine, or keep both. 
+               Let's keep default cursor for accessibility/precision. */
+        }
+      }
+
+      /* Grain Texture Overlay */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+        pointer-events: none;
+        z-index: 9999;
+        opacity: 0.4;
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0a0a0a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #262626;
+        border-radius: 99px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #404040;
+      }
+      
+      .glass-panel {
+        background: rgba(23, 23, 23, 0.6);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      /* Scroll Reveal Animation Classes */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      /* Stagger delays */
+      .reveal-delay-100 { transition-delay: 100ms; }
+      .reveal-delay-200 { transition-delay: 200ms; }
+      .reveal-delay-300 { transition-delay: 300ms; }
+
+      /* Avatar Float Animation */
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-6px); }
+      }
+      .animate-float {
+        animation: float 3s ease-in-out infinite;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "recharts": "https://aistudiocdn.com/recharts@^3.5.1",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
