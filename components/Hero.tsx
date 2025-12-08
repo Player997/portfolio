@@ -44,7 +44,6 @@ const Hero: React.FC = () => {
         top: offsetTop - 100,
         behavior: 'smooth'
       });
-      // Update URL for shareability without causing a default jump
       window.history.pushState(null, '', id);
     }
   };
@@ -91,7 +90,7 @@ const Hero: React.FC = () => {
           </a>
           
           <a 
-            href="/Aditya_Verma_Resume.pdf"
+            href="/resume.html"
             target="_blank"
             className="group flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-text font-medium hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300 backdrop-blur-sm cursor-pointer w-full sm:w-auto"
           >

@@ -14,12 +14,49 @@ export const PERSONAL_INFO = {
   email: "adityaverma5069@gmail.com",
   phone: "+91 9354138042",
   location: "Gurugram, Haryana, India",
-  linkedin: "https://www.linkedin.com/in/aditya-verma",
+  linkedin: "https://www.linkedin.com/in/aditya-verma-aa8178288/",
   github: "https://github.com/Player997",
-  bio: "I am a Bachelor of Engineering student at Chandigarh University, specializing in Computer Science with a focus on Artificial Intelligence and Machine Learning. My journey bridges the gap between robust software engineering and innovative AI solutions. From building responsive web applications to engineering crop recommendation models, I am driven by the desire to solve real-world problems through technology."
+  bio: "Enthusiastic Computer Science Engineer and Web Developer with practical experience in full-stack development, machine learning, and data science. Skilled in building responsive, user-focused web applications and intelligent systems. Passionate about leveraging technology to develop innovative solutions that simplify and enhance digital experiences."
 };
 
 export const PROJECTS: Project[] = [
+  {
+    title: "Expense tracker WebApp",
+    category: "Web",
+    description: [
+      "Developed a responsive expense tracking application with real-time data updates.",
+      "Users can add, edit, delete, and categorize expenses and view detailed summaries.",
+      "Integrated Firebase for user authentication (Google OAuth and email/password login).",
+      "Implemented secure session management and real-time database syncing."
+    ],
+    tech: ["React", "Vite.js", "Tailwind CSS", "Node.js", "Express.js", "Firebase"],
+    github: "https://github.com/Player997",
+    link: "https://github.com/Player997"
+  },
+  {
+    title: "Anime Streaming Website",
+    category: "Web",
+    description: [
+      "Built a modern anime-streaming UI with a clean dark theme and responsive card-based layout.",
+      "Added genre navigation, search UI, and reusable React components for consistent design.",
+      "Optimized UI performance using Vite and Tailwind CSS."
+    ],
+    tech: ["React", "Vite", "Tailwind CSS"],
+    github: "https://github.com/Player997",
+    link: "https://github.com/Player997"
+  },
+  {
+    title: "Task Scheduler & To-Do Web App",
+    category: "Web",
+    description: [
+      "Developed a simple, clean task manager with add, delete, and complete-task features.",
+      "Designed a responsive interface with smooth interactions and dark mode support.",
+      "Used localStorage for data persistence without backend dependency."
+    ],
+    tech: ["HTML", "CSS", "JavaScript"],
+    github: "https://github.com/Player997",
+    link: "https://github.com/Player997"
+  },
   {
     title: "Smart Crop Recommendation & Disease Detection",
     category: "AI/ML",
@@ -31,42 +68,6 @@ export const PROJECTS: Project[] = [
     tech: ["Python", "TensorFlow/Keras", "CNN", "Weather APIs", "React"],
     github: "https://github.com/Player997",
     link: "https://github.com/Player997" 
-  },
-  {
-    title: "Expense Tracker Web App",
-    category: "Web",
-    description: [
-      "Developed a responsive expense tracker with real-time data updates.",
-      "Integrated Firebase authentication (Google OAuth + Email/Password).",
-      "Implemented secure session management and real-time syncing."
-    ],
-    tech: ["React", "Vite", "Firebase", "Tailwind CSS", "Node.js"],
-    github: "https://github.com/Player997",
-    link: "https://github.com/Player997"
-  },
-  {
-    title: "Anime Streaming Website",
-    category: "Web",
-    description: [
-      "Built a modern anime-streaming UI with dark theme and card-based layout.",
-      "Implemented genre navigation, search functionality, and reusable components.",
-      "Optimized rendering performance using Vite."
-    ],
-    tech: ["React", "Vite", "Tailwind CSS"],
-    github: "https://github.com/Player997/anime-streaming-site",
-    link: "https://github.com/Player997/anime-streaming-site"
-  },
-  {
-    title: "Task Scheduler & To-Do List",
-    category: "Web",
-    description: [
-      "Developed a robust task management application for organizing daily activities.",
-      "Implemented priority-based sorting and local storage persistence.",
-      "Features a clean, responsive interface for efficient task tracking."
-    ],
-    tech: ["React", "JavaScript", "CSS3", "LocalStorage"],
-    github: "https://github.com/Player997/task-scheduler",
-    link: "https://github.com/Player997/task-scheduler"
   }
 ];
 
@@ -132,11 +133,13 @@ export const EDUCATION: Education[] = [
 ];
 
 export const CERTIFICATIONS: Certification[] = [
-  { name: "Artificial Intelligence Analyst", issuer: "IBM", date: "Apr 2025 (Expected)" },
+  { name: "Artificial Intelligence Analyst", issuer: "IBM", date: "Apr 2025" },
   { name: "Generative AI for Data Analysis", issuer: "Coursera", date: "Mar 2025" },
+  { name: "Introduction to Generative AI", issuer: "LinkedIn Learning", date: "Aug 2024" },
+  { name: "Data Analytics & Visualization Job Simulation", issuer: "Forage", date: "Jul 2024" },
   { name: "OCI 2024 Generative AI Certified Professional", issuer: "Oracle", date: "Jun 2024" },
   { name: "Trust and Security with Google Cloud", issuer: "Udacity", date: "Jul 2024" },
-  { name: "Data Analytics & Visualization Job Simulation", issuer: "Forage", date: "Jul 2024" },
+  { name: "Python for Data Science, AI & Development", issuer: "Coursera", date: "Apr 2024" },
 ];
 
 export const NAV_LINKS = [

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Verma - Resume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        @media print {
+            body { -webkit-print-color-adjust: exact; background-color: white; }
+            .no-print { display: none; }
+            .print-shadow-none { box-shadow: none; }
+            .print-p-0 { padding: 0; }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 py-10 print:bg-white print:py-0">
+    <div class="max-w-[210mm] mx-auto bg-white shadow-2xl print:shadow-none print:max-w-full p-8 md:p-12 text-gray-800">
+        <!-- Header -->
+        <header class="border-b-2 border-gray-800 pb-6 mb-6">
+            <h1 class="text-4xl font-bold uppercase tracking-wide text-gray-900 mb-2">Aditya Verma</h1>
+            <div class="text-sm font-medium text-gray-600 flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+                <span>Gurugram, Haryana, 122001</span>
+                <span class="hidden md:inline text-gray-400">|</span>
+                <a href="mailto:adityaverma5069@gmail.com" class="hover:text-blue-600 transition-colors">adityaverma5069@gmail.com</a>
+                <span class="hidden md:inline text-gray-400">|</span>
+                <span>+91 9354138042</span>
+            </div>
+            <div class="mt-3 text-sm font-medium text-blue-600 flex gap-4">
+                <a href="https://www.linkedin.com/in/aditya-verma-aa8178288/" target="_blank" class="hover:underline flex items-center gap-1">
+                    LinkedIn Profile
+                </a>
+                <a href="https://github.com/Player997" target="_blank" class="hover:underline flex items-center gap-1">
+                    GitHub Profile
+                </a>
+            </div>
+        </header>
+
+        <!-- Professional Summary -->
+        <section class="mb-8">
+            <h2 class="text-lg font-bold uppercase border-b border-gray-300 mb-3 text-gray-900 tracking-wider">Professional Summary</h2>
+            <p class="text-sm leading-relaxed text-gray-700 text-justify">
+                Enthusiastic Computer Science Engineer and Web Developer with practical experience in full-stack development, machine learning, and data science. Skilled in building responsive, user-focused web applications and intelligent systems. Passionate about leveraging technology to develop innovative solutions that simplify and enhance digital experiences. Eager to learn, adapt, and contribute to impactful projects in the tech industry.
+            </p>
+        </section>
+
+        <!-- Technical Competencies -->
+        <section class="mb-8">
+            <h2 class="text-lg font-bold uppercase border-b border-gray-300 mb-3 text-gray-900 tracking-wider">Technical Competencies</h2>
+            <div class="text-sm text-gray-700 leading-relaxed">
+                <span class="font-bold text-gray-900">Core Stack:</span> HTML5, CSS3, Tailwind CSS, JavaScript, Node.js, Express.js, React.js, Next.js<br>
+                <span class="font-bold text-gray-900">Backend & DB:</span> SQL, PostgreSQL, Python, Java<br>
+                <span class="font-bold text-gray-900">DevOps & Tools:</span> C++, Docker, Kubernetes, GitHub, Git, Figma, Framer
+            </div>
+        </section>
+
+        <!-- Training & Projects -->
+        <section class="mb-8">
+            <h2 class="text-lg font-bold uppercase border-b border-gray-300 mb-4 text-gray-900 tracking-wider">Projects</h2>
+            
+            <div class="mb-5">
+                <div class="flex justify-between items-baseline">
+                    <h3 class="font-bold text-gray-900 text-base">Expense tracker WebApp</h3>
+                </div>
+                <ul class="list-disc ml-5 text-sm text-gray-700 mt-2 space-y-1">
+                    <li>Developed a responsive expense tracking application with real-time data updates.</li>
+                    <li>Users can add, edit, delete, and categorize expenses and view detailed summaries.</li>
+                    <li>Integrated Firebase for user authentication (Google OAuth and email/password login).</li>
+                    <li>Implemented secure session management and real-time database syncing.</li>
+                    <li class="italic text-gray-600"><span class="font-medium not-italic text-gray-800">Tech Stack:</span> React, Vite.js, Tailwind CSS, Node.js, Express.js, Firebase.</li>
+                </ul>
+            </div>
+
+            <div class="mb-5">
+                <div class="flex justify-between items-baseline">
+                    <h3 class="font-bold text-gray-900 text-base">Anime Streaming Website</h3>
+                </div>
+                <ul class="list-disc ml-5 text-sm text-gray-700 mt-2 space-y-1">
+                    <li>Built a modern anime-streaming UI with a clean dark theme and responsive card-based layout.</li>
+                    <li>Added genre navigation, search UI, and reusable React components for consistent design.</li>
+                    <li>Optimized UI performance using Vite and Tailwind CSS.</li>
+                    <li class="italic text-gray-600"><span class="font-medium not-italic text-gray-800">Tech Stack:</span> React, Vite, Tailwind CSS.</li>
+                </ul>
+            </div>
+
+            <div>
+                <div class="flex justify-between items-baseline">
+                    <h3 class="font-bold text-gray-900 text-base">Task Scheduler & To-Do Web App</h3>
+                </div>
+                <ul class="list-disc ml-5 text-sm text-gray-700 mt-2 space-y-1">
+                    <li>Developed a simple, clean task manager with add, delete, and complete-task features.</li>
+                    <li>Designed a responsive interface with smooth interactions and dark mode support.</li>
+                    <li>Used localStorage for data persistence without backend dependency.</li>
+                    <li class="italic text-gray-600"><span class="font-medium not-italic text-gray-800">Tech Stack:</span> HTML, CSS, JavaScript.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="mb-8">
+            <h2 class="text-lg font-bold uppercase border-b border-gray-300 mb-4 text-gray-900 tracking-wider">Education</h2>
+            <div class="mb-4">
+                <div class="flex justify-between font-bold text-sm text-gray-900">
+                    <span>Bachelor of Engineering in CSE (Hons.) with AI & ML (IBM)</span>
+                    <span>2022 - 2026</span>
+                </div>
+                <div class="flex justify-between text-sm text-gray-600">
+                    <span>Chandigarh University, Gharuan, Punjab</span>
+                    <span>CGPA: 7.48</span>
+                </div>
+            </div>
+            <div class="mb-4">
+                <div class="flex justify-between font-bold text-sm text-gray-900">
+                    <span>Intermediate (CBSE)</span>
+                    <span>2021 - 2022</span>
+                </div>
+                <div class="flex justify-between text-sm text-gray-600">
+                    <span>SCR Public School, Gurugram, Haryana</span>
+                    <span>Percentage: 77.8%</span>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-between font-bold text-sm text-gray-900">
+                    <span>Matriculation (CBSE)</span>
+                    <span>2019 - 2020</span>
+                </div>
+                <div class="flex justify-between text-sm text-gray-600">
+                    <span>SCR Public School, Gurugram, Haryana</span>
+                    <span>Percentage: 86.83%</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications -->
+        <section class="mb-8">
+            <h2 class="text-lg font-bold uppercase border-b border-gray-300 mb-3 text-gray-900 tracking-wider">Certifications & Awards</h2>
+            <ul class="list-disc ml-5 text-sm text-gray-700 space-y-1">
+                <li><span class="font-semibold">Artificial Intelligence Analyst</span> | IBM | April 2025</li>
+                <li><span class="font-semibold">Generative AI for Data Analysis</span> | Coursera | March 2025</li>
+                <li><span class="font-semibold">Introduction to Generative AI</span> | LinkedIn Learning | Aug 2024</li>
+                <li><span class="font-semibold">Data Analytics and Visualization Job Simulation</span> | Forage | July 2024</li>
+                <li><span class="font-semibold">OCI 2024 Generative AI Certified Professional</span> | Oracle | June 2024</li>
+                <li><span class="font-semibold">Trust and Security with Google Cloud</span> | Udacity | July 2024</li>
+                <li><span class="font-semibold">Python for Data Science, AI & Development</span> | Coursera | April 2024</li>
+            </ul>
+        </section>
+
+        <!-- Personal Info & Skills -->
+        <div class="grid grid-cols-2 gap-8">
+            <div>
+                <h2 class="text-sm font-bold uppercase border-b border-gray-300 mb-2 text-gray-900 tracking-wider">Interests</h2>
+                <p class="text-sm text-gray-700">Gaming, Music, Photography, Video editing</p>
+            </div>
+            <div>
+                <h2 class="text-sm font-bold uppercase border-b border-gray-300 mb-2 text-gray-900 tracking-wider">Languages</h2>
+                <p class="text-sm text-gray-700">English, Hindi, Rajasthani, Haryanvi</p>
+            </div>
+            <div>
+                 <h2 class="text-sm font-bold uppercase border-b border-gray-300 mb-2 text-gray-900 tracking-wider">Personal Details</h2>
+                 <p class="text-sm text-gray-700">
+                    Father: Sanjay Kumar<br>
+                    DOB: 24/11/2004
+                 </p>
+            </div>
+        </div>
+
+        <div class="mt-12 text-center no-print">
+            <button onclick="window.print()" class="bg-gray-900 text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition shadow-lg font-medium flex items-center gap-2 mx-auto">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Save as PDF
+            </button>
+            <p class="mt-4 text-xs text-gray-500">Tip: Select "Save as PDF" in the print destination.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -35,7 +35,6 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleTheme }) => {
         top: offsetTop - 100, 
         behavior: 'smooth'
       });
-      // Update URL for shareability without causing a default jump
       window.history.pushState(null, '', href);
     }
   };
@@ -95,7 +94,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleTheme }) => {
         
         {/* Resume Button Desktop */}
         <a 
-          href="/Aditya_Verma_Resume.pdf" 
+          href="/resume.html" 
           target="_blank"
           className="glass-panel rounded-full px-5 py-2.5 flex items-center gap-2 text-muted hover:text-text hover:bg-black/5 dark:hover:bg-white/10 transition-all active:scale-95 group border border-transparent hover:border-primary/30"
           title="Download Resume"
@@ -134,7 +133,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleTheme }) => {
           })}
           {/* Mobile Resume Link */}
           <a
-            href="/Aditya_Verma_Resume.pdf"
+            href="/resume.html"
             target="_blank"
             className="flex flex-col items-center gap-1 p-2 rounded-lg text-muted hover:text-primary transition-colors"
           >
