@@ -85,7 +85,7 @@ const VideoGen: React.FC = () => {
   };
 
   return (
-    <section id="ai-demo" className="py-20 bg-dark relative overflow-hidden">
+    <section id="ai-demo" className="py-20 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
           <div className="absolute top-1/4 -left-10 w-64 h-64 bg-primary/10 rounded-full blur-[100px]"></div>
           <div className="absolute bottom-1/4 -right-10 w-64 h-64 bg-secondary/10 rounded-full blur-[100px]"></div>
@@ -94,23 +94,23 @@ const VideoGen: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <span className="px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-semibold border border-primary/20">
+            <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold border border-primary/20">
               BETA FEATURE
             </span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">AI Video Playground</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-text mb-4">AI Video Playground</h2>
           <p className="text-muted max-w-2xl mx-auto">
              Experience the power of Gemini Veo. Generate a short cinematic introduction or a visual concept for your next project right here.
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="bg-card rounded-2xl border border-white/5 p-1 shadow-2xl">
-            <div className="bg-black/40 rounded-xl p-6 md:p-8">
+          <div className="glass-panel rounded-2xl p-1 shadow-2xl">
+            <div className="bg-black/5 dark:bg-black/40 rounded-xl p-6 md:p-8">
               
               {/* Input Section */}
               <div className="mb-8">
-                <label className="block text-sm font-medium text-gray-300 mb-2 flex items-center gap-2">
+                <label className="block text-sm font-medium text-text mb-2 flex items-center gap-2">
                   <Sparkles size={16} className="text-secondary" /> 
                   Describe your vision
                 </label>
@@ -118,7 +118,7 @@ const VideoGen: React.FC = () => {
                   <textarea 
                     value={prompt}
                     onChange={(e) => setPrompt(e.target.value)}
-                    className="w-full bg-black/50 border border-white/10 rounded-lg p-4 text-white focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-none h-32"
+                    className="w-full bg-surface border border-black/10 dark:border-white/10 rounded-lg p-4 text-text focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-none h-32"
                     placeholder="E.g., A cinematic drone shot of a solar farm in the desert at sunset..."
                     disabled={loading}
                   />
@@ -156,14 +156,14 @@ const VideoGen: React.FC = () => {
 
               {/* Error Message */}
               {error && (
-                <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-lg flex items-center gap-3 text-red-200">
+                <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-lg flex items-center gap-3 text-red-400">
                   <AlertCircle size={20} />
                   <p>{error}</p>
                 </div>
               )}
 
               {/* Video Output */}
-              <div className="relative aspect-video bg-black/50 rounded-lg border border-white/5 overflow-hidden flex items-center justify-center group">
+              <div className="relative aspect-video bg-black/10 dark:bg-black/50 rounded-lg border border-black/10 dark:border-white/5 overflow-hidden flex items-center justify-center group">
                 {videoUrl ? (
                   <video 
                     controls 
@@ -177,16 +177,16 @@ const VideoGen: React.FC = () => {
                     {loading ? (
                        <div className="flex flex-col items-center gap-4">
                          <div className="relative">
-                           <div className="w-16 h-16 rounded-full border-4 border-white/5 border-t-primary animate-spin"></div>
+                           <div className="w-16 h-16 rounded-full border-4 border-black/10 dark:border-white/5 border-t-primary animate-spin"></div>
                            <div className="absolute inset-0 flex items-center justify-center">
-                             <Video size={24} className="text-white/20" />
+                             <Video size={24} className="text-muted" />
                            </div>
                          </div>
                          <p className="text-muted text-sm animate-pulse">{status}</p>
                        </div>
                     ) : (
                       <div className="flex flex-col items-center gap-3 text-muted">
-                        <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                        <div className="w-16 h-16 rounded-full bg-black/5 dark:bg-white/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
                            <Play size={32} className="ml-1 opacity-50 group-hover:opacity-100 transition-opacity" />
                         </div>
                         <p>Your generated video will appear here</p>

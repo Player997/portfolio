@@ -39,28 +39,28 @@ const Hero: React.FC = () => {
     e.preventDefault();
     const element = document.querySelector(id);
     if (element) {
-      const offsetTop = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetTop = element.getBoundingClientRect().top + window.scrollY;
       window.scrollTo({
         top: offsetTop - 100,
         behavior: 'smooth'
       });
+      // Update URL for shareability without causing a default jump
+      window.history.pushState(null, '', id);
     }
   };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-40 pb-10 overflow-hidden">
       
-      {/* Background is now handled by InteractiveBackground component in App.tsx */}
-
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center">
         
         {/* Status Badge */}
-        <div className="reveal inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-8 hover:bg-white/10 transition-colors cursor-default">
+        <div className="reveal inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 mb-8 hover:bg-black/10 dark:hover:bg-white/10 transition-colors cursor-default">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
           </span>
-          <span className="text-xs font-medium text-gray-300 tracking-wide">AVAILABLE FOR WORK</span>
+          <span className="text-xs font-medium text-muted tracking-wide">AVAILABLE FOR WORK</span>
         </div>
 
         <h1 className="reveal reveal-delay-100 text-6xl md:text-8xl font-bold tracking-tight mb-6">
@@ -75,16 +75,16 @@ const Hero: React.FC = () => {
         </div>
 
         <p className="reveal reveal-delay-200 max-w-2xl text-xl text-muted leading-relaxed mb-10">
-          Hi, I'm <span className="text-white font-semibold">{PERSONAL_INFO.name}</span>. 
-          I bridge the gap between complex <span className="text-gray-300">Data Science</span> algorithms 
-          and intuitive <span className="text-gray-300">Full Stack</span> experiences.
+          Hi, I'm <span className="text-text font-semibold">{PERSONAL_INFO.name}</span>. 
+          I bridge the gap between complex <span className="text-text/80">Data Science</span> algorithms 
+          and intuitive <span className="text-text/80">Full Stack</span> experiences.
         </p>
         
         <div className="reveal reveal-delay-300 flex flex-col sm:flex-row gap-4 w-full sm:w-auto items-center justify-center">
           <a 
             href="#projects"
             onClick={(e) => handleNavClick(e, '#projects')}
-            className="group flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-white text-dark font-semibold hover:bg-gray-200 transition-all duration-300 cursor-pointer shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] w-full sm:w-auto"
+            className="group flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-text text-dark font-semibold hover:bg-text/90 transition-all duration-300 cursor-pointer shadow-lg hover:shadow-xl w-full sm:w-auto"
           >
             See My Work
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -93,7 +93,7 @@ const Hero: React.FC = () => {
           <a 
             href="/Aditya_Verma_Resume.pdf"
             target="_blank"
-            className="group flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-white/5 border border-white/10 text-white font-medium hover:bg-white/10 transition-all duration-300 backdrop-blur-sm cursor-pointer w-full sm:w-auto"
+            className="group flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-text font-medium hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300 backdrop-blur-sm cursor-pointer w-full sm:w-auto"
           >
             <FileText size={18} />
             Resume
@@ -102,13 +102,13 @@ const Hero: React.FC = () => {
         </div>
 
         <div className="reveal reveal-delay-300 mt-16 flex gap-6">
-          <a href={PERSONAL_INFO.github} target="_blank" rel="noreferrer" className="text-muted hover:text-white transition-colors hover:scale-110 duration-300">
+          <a href={PERSONAL_INFO.github} target="_blank" rel="noreferrer" className="text-muted hover:text-text transition-colors hover:scale-110 duration-300">
             <Github size={24} />
           </a>
-          <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noreferrer" className="text-muted hover:text-white transition-colors hover:scale-110 duration-300">
+          <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noreferrer" className="text-muted hover:text-text transition-colors hover:scale-110 duration-300">
             <Linkedin size={24} />
           </a>
-          <a href={`mailto:${PERSONAL_INFO.email}`} className="text-muted hover:text-white transition-colors hover:scale-110 duration-300">
+          <a href={`mailto:${PERSONAL_INFO.email}`} className="text-muted hover:text-text transition-colors hover:scale-110 duration-300">
             <Mail size={24} />
           </a>
         </div>

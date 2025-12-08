@@ -26,11 +26,11 @@ const Preloader: React.FC<{ onComplete: () => void }> = ({ onComplete }) => {
         <Terminal size={64} className="relative z-10 animate-bounce" />
       </div>
       <div className="font-mono text-xl md:text-2xl h-8 relative">
-        <span className="text-white">root@portfolio:~$</span> {text}
+        <span className="text-text">root@portfolio:~$</span> {text}
         <span className="animate-pulse">_</span>
       </div>
       
-      <div className="mt-8 w-48 h-1 bg-white/10 rounded-full overflow-hidden">
+      <div className="mt-8 w-48 h-1 bg-black/10 dark:bg-white/10 rounded-full overflow-hidden">
         <div className="h-full bg-primary animate-[width_2s_ease-in-out_forwards]" style={{ width: '100%' }}></div>
       </div>
     </div>

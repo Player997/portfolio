@@ -1,38 +1,73 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { PERSONAL_INFO } from '../constants';
-import { MapPin, Globe, Code2, Brain } from 'lucide-react';
+import { MapPin, Code2, Brain } from 'lucide-react';
 
 const About: React.FC = () => {
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const sectionRef = useRef<HTMLElement>(null);
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!sectionRef.current) return;
+    const rect = sectionRef.current.getBoundingClientRect();
+    const x = (e.clientX - rect.left) - rect.width / 2;
+    const y = (e.clientY - rect.top) - rect.height / 2;
+    setMousePos({ x, y });
+  };
+
   return (
-    <section id="about" className="py-20 relative">
+    <section id="about" className="py-20 relative" ref={sectionRef} onMouseMove={handleMouseMove}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12 reveal">
-          <h2 className="text-3xl font-bold text-white">About Me</h2>
+          <h2 className="text-3xl font-bold text-text">About Me</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[200px]">
           
-          {/* Bio Card - Large */}
+          {/* Bio Card - Large with Parallax */}
           <div className="reveal md:col-span-2 md:row-span-2 glass-panel rounded-3xl p-8 flex flex-col justify-center relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/20 transition-colors duration-500"></div>
-            <h3 className="text-2xl font-bold text-white mb-4 relative z-10">The Intersection of Logic & Creativity</h3>
-            <p className="text-gray-300 leading-relaxed relative z-10">
+            
+            {/* Parallax Background Container */}
+            <div 
+                className="absolute inset-[-10%] z-0 transition-transform duration-300 ease-out will-change-transform"
+                style={{ 
+                    transform: `translate(${mousePos.x * -0.015}px, ${mousePos.y * -0.015}px)` 
+                }}
+            >
+                {/* Intricate Grid Pattern */}
+                <div 
+                    className="absolute inset-0 opacity-[0.07] dark:opacity-[0.07] transition-opacity" 
+                    style={{
+                        backgroundImage: `linear-gradient(rgba(120, 120, 120, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(120, 120, 120, 0.5) 1px, transparent 1px)`,
+                        backgroundSize: '40px 40px',
+                        maskImage: 'radial-gradient(circle at center, black 40%, transparent 100%)',
+                        WebkitMaskImage: 'radial-gradient(circle at center, black 40%, transparent 100%)'
+                    }}
+                ></div>
+
+                {/* Floating Ethereal Orbs */}
+                <div className="absolute top-[20%] right-[20%] w-64 h-64 bg-primary/20 rounded-full blur-[60px] animate-pulse"></div>
+                <div className="absolute bottom-[20%] left-[20%] w-56 h-56 bg-secondary/20 rounded-full blur-[60px] animate-pulse" style={{ animationDelay: '2s' }}></div>
+            </div>
+
+            {/* Content */}
+            <h3 className="text-2xl font-bold text-text mb-4 relative z-10">The Intersection of Logic & Creativity</h3>
+            <p className="text-muted leading-relaxed relative z-10 font-medium">
               {PERSONAL_INFO.bio}
             </p>
             <div className="mt-6 flex flex-wrap gap-2 relative z-10">
-               <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-muted">Problem Solver</span>
-               <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-muted">Tech Enthusiast</span>
-               <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-muted">Continuous Learner</span>
+               <span className="px-3 py-1 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-xs text-text/70 hover:bg-black/10 dark:hover:bg-white/10 transition-colors cursor-default">Problem Solver</span>
+               <span className="px-3 py-1 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-xs text-text/70 hover:bg-black/10 dark:hover:bg-white/10 transition-colors cursor-default">Tech Enthusiast</span>
+               <span className="px-3 py-1 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-xs text-text/70 hover:bg-black/10 dark:hover:bg-white/10 transition-colors cursor-default">Continuous Learner</span>
             </div>
           </div>
 
           {/* Location Card */}
           <div className="reveal reveal-delay-100 glass-panel rounded-3xl p-6 flex flex-col items-center justify-center text-center relative overflow-hidden group hover:border-primary/30 transition-colors">
-            <div className="w-full h-full absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(120,119,198,0.3),rgba(255,255,255,0))]" />
-            <div className="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mb-4 relative z-10 group-hover:scale-110 transition-transform">
+            <div className="w-full h-full absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(120,119,198,0.2),rgba(255,255,255,0))]" />
+            <div className="w-16 h-16 bg-black/5 dark:bg-white/5 rounded-full flex items-center justify-center mb-4 relative z-10 group-hover:scale-110 transition-transform">
               <MapPin className="text-primary" size={28} />
             </div>
-            <h4 className="text-white font-medium relative z-10">Based in</h4>
+            <h4 className="text-text font-medium relative z-10">Based in</h4>
             <p className="text-muted text-sm relative z-10">{PERSONAL_INFO.location}</p>
           </div>
 
@@ -45,8 +80,8 @@ const About: React.FC = () => {
               <span className="text-xs font-mono text-muted">CURRENT FOCUS</span>
             </div>
             <div>
-              <h4 className="text-xl font-bold text-white mt-2">AI & Machine Learning</h4>
-              <p className="text-sm text-gray-400 mt-1">Specializing in predictive models and computer vision.</p>
+              <h4 className="text-xl font-bold text-text mt-2">AI & Machine Learning</h4>
+              <p className="text-sm text-muted mt-1">Specializing in predictive models and computer vision.</p>
             </div>
           </div>
 
@@ -60,7 +95,7 @@ const About: React.FC = () => {
             </div>
              <div className="flex flex-wrap gap-2 mt-4">
                 {['React', 'Python', 'TensorFlow', 'Node.js', 'SQL'].map(tech => (
-                  <span key={tech} className="px-2 py-1 bg-black/40 rounded text-xs text-gray-300 border border-white/5">
+                  <span key={tech} className="px-2 py-1 bg-black/10 dark:bg-black/40 rounded text-xs text-text/80 border border-black/5 dark:border-white/5">
                     {tech}
                   </span>
                 ))}

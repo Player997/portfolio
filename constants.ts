@@ -80,11 +80,31 @@ export const SKILLS_DATA: SkillMetric[] = [
 ];
 
 export const TECH_STACK = [
-  { category: "Languages", items: ["C++", "Python", "Java", "JavaScript", "TypeScript"] },
-  { category: "Frontend", items: ["React.js", "Next.js", "HTML5", "CSS3", "Tailwind CSS", "Framer"] },
-  { category: "Backend", items: ["Node.js", "Express.js", "Python ML Libraries"] },
-  { category: "Database & Cloud", items: ["SQL", "PostgreSQL", "Firebase", "Oracle Cloud", "Google Cloud"] },
-  { category: "Tools", items: ["Git", "GitHub", "Docker", "Kubernetes", "Figma", "Power BI"] },
+  { 
+    category: "Languages", 
+    description: "Foundational languages I use to construct logic, algorithms, and system architecture.",
+    items: ["C++", "Python", "Java", "JavaScript", "TypeScript"] 
+  },
+  { 
+    category: "Frontend", 
+    description: "Libraries and frameworks for building responsive, accessible, and performant user interfaces.",
+    items: ["React.js", "Next.js", "HTML5", "CSS3", "Tailwind CSS", "Framer"] 
+  },
+  { 
+    category: "Backend", 
+    description: "Server-side technologies used to build scalable APIs and handle business logic.",
+    items: ["Node.js", "Express.js", "Python ML Libraries"] 
+  },
+  { 
+    category: "Database & Cloud", 
+    description: "Solutions for persistent data storage and cloud infrastructure management.",
+    items: ["SQL", "PostgreSQL", "Firebase", "Oracle Cloud", "Google Cloud"] 
+  },
+  { 
+    category: "Tools", 
+    description: "Essential DevOps, version control, and design tools that streamline the development lifecycle.",
+    items: ["Git", "GitHub", "Docker", "Kubernetes", "Figma", "Power BI"] 
+  },
 ];
 
 export const EDUCATION: Education[] = [

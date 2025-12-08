@@ -1,52 +1,53 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth scroll-pt-24">
+<html lang="en" class="scroll-smooth scroll-pt-24 dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aditya Verma | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-            },
-            colors: {
-              primary: '#818cf8', // Indigo 400
-              secondary: '#c084fc', // Purple 400
-              dark: '#0a0a0a', // Neutral 950
-              card: '#171717', // Neutral 900
-              surface: '#262626', // Neutral 800
-              text: '#ededed', // Neutral 100
-              muted: '#a3a3a3', // Neutral 400
-            },
-            backgroundImage: {
-              'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-            }
-          }
-        }
-      }
-    </script>
     <style>
+      :root {
+        /* Light Mode Variables */
+        --bg-primary: #fafafa;     /* Neutral 50 */
+        --bg-secondary: #f4f4f5;   /* Neutral 100 */
+        --text-primary: #18181b;   /* Neutral 900 */
+        --text-secondary: #52525b; /* Neutral 600 */
+        --color-primary: #6366f1;  /* Indigo 500 */
+        --color-secondary: #a855f7;/* Purple 500 */
+        --glass-bg: rgba(255, 255, 255, 0.6);
+        --glass-border: rgba(0, 0, 0, 0.05);
+        --overlay-color: rgba(255, 255, 255, 0.8);
+      }
+
+      .dark {
+        /* Dark Mode Variables */
+        --bg-primary: #0a0a0a;     /* Neutral 950 */
+        --bg-secondary: #171717;   /* Neutral 900 */
+        --text-primary: #ededed;   /* Neutral 100 */
+        --text-secondary: #a3a3a3; /* Neutral 400 */
+        --color-primary: #818cf8;  /* Indigo 400 */
+        --color-secondary: #c084fc;/* Purple 400 */
+        --glass-bg: rgba(23, 23, 23, 0.6);
+        --glass-border: rgba(255, 255, 255, 0.08);
+        --overlay-color: rgba(10, 10, 10, 0.8);
+      }
+
       body {
-        background-color: #0a0a0a;
-        color: #ededed;
-        /* Static background removed to allow interactive canvas */
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
         min-height: 100vh;
-        cursor: none; /* Hide default cursor if you want full immersion, but usually keeping it + follower is better. Let's keep default cursor visible for usability */
+        cursor: none;
+        transition: background-color 0.3s ease, color 0.3s ease;
       }
       
       @media (min-width: 768px) {
         body {
-            /* Optional: Hide default cursor on desktop to let the character shine, or keep both. 
-               Let's keep default cursor for accessibility/precision. */
+            /* Keep default cursor for accessibility/precision */
         }
       }
 
-      /* Grain Texture Overlay */
+      /* Grain Texture Overlay - Made lighter in light mode */
       body::before {
         content: "";
         position: fixed;
@@ -59,26 +60,34 @@
         z-index: 9999;
         opacity: 0.4;
       }
+      
+      /* In light mode, darken the noise slightly so it's visible */
+      :not(.dark) body::before {
+        filter: invert(1);
+        opacity: 0.2;
+      }
 
       /* Custom Scrollbar */
       ::-webkit-scrollbar {
         width: 6px;
       }
       ::-webkit-scrollbar-track {
-        background: #0a0a0a;
+        background: var(--bg-primary);
       }
       ::-webkit-scrollbar-thumb {
-        background: #262626;
+        background: var(--bg-secondary);
         border-radius: 99px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #404040;
+        background: var(--text-secondary);
       }
       
       .glass-panel {
-        background: rgba(23, 23, 23, 0.6);
+        background: var(--glass-bg);
         backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid var(--glass-border);
+        transition: background-color 0.3s, border-color 0.3s;
       }
 
       /* Scroll Reveal Animation Classes */
@@ -91,12 +100,10 @@
         opacity: 1;
         transform: translateY(0);
       }
-      /* Stagger delays */
       .reveal-delay-100 { transition-delay: 100ms; }
       .reveal-delay-200 { transition-delay: 200ms; }
       .reveal-delay-300 { transition-delay: 300ms; }
 
-      /* Avatar Float Animation */
       @keyframes float {
         0%, 100% { transform: translateY(0); }
         50% { transform: translateY(-6px); }
@@ -105,6 +112,33 @@
         animation: float 3s ease-in-out infinite;
       }
     </style>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              primary: 'var(--color-primary)',
+              secondary: 'var(--color-secondary)',
+              dark: 'var(--bg-primary)',
+              card: 'var(--bg-secondary)',
+              surface: 'var(--bg-secondary)',
+              text: 'var(--text-primary)',
+              muted: 'var(--text-secondary)',
+              // Helper to use absolute white/black when needed
+              'true-white': '#ffffff',
+              'true-black': '#000000',
+            },
+            backgroundImage: {
+              'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+            }
+          }
+        }
+      }
+    </script>
   <script type="importmap">
 {
   "imports": {
