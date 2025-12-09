@@ -23,6 +23,16 @@ const About: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[200px]">
           
+          {/* Profile Image Card */}
+          <div className="reveal md:col-span-1 md:row-span-2 glass-panel rounded-3xl p-2 relative overflow-hidden group border border-white/10 flex items-center justify-center">
+             <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 pointer-events-none"></div>
+             <img 
+                src="./profile.jpg" 
+                alt={PERSONAL_INFO.name}
+                className="w-full h-full object-cover rounded-2xl transition-transform duration-700 ease-out group-hover:scale-105"
+             />
+          </div>
+
           {/* Bio Card - Large with Parallax */}
           <div className="reveal md:col-span-2 md:row-span-2 glass-panel rounded-3xl p-8 flex flex-col justify-center relative overflow-hidden group">
             
@@ -51,10 +61,10 @@ const About: React.FC = () => {
 
             {/* Content */}
             <h3 className="text-2xl font-bold text-text mb-4 relative z-10">The Intersection of Logic & Creativity</h3>
-            <p className="text-muted leading-relaxed relative z-10 font-medium">
+            <p className="text-muted leading-relaxed relative z-10 font-medium text-lg">
               {PERSONAL_INFO.bio}
             </p>
-            <div className="mt-6 flex flex-wrap gap-2 relative z-10">
+            <div className="mt-8 flex flex-wrap gap-2 relative z-10">
                <span className="px-3 py-1 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-xs text-text/70 hover:bg-black/10 dark:hover:bg-white/10 transition-colors cursor-default">Problem Solver</span>
                <span className="px-3 py-1 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-xs text-text/70 hover:bg-black/10 dark:hover:bg-white/10 transition-colors cursor-default">Tech Enthusiast</span>
                <span className="px-3 py-1 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-xs text-text/70 hover:bg-black/10 dark:hover:bg-white/10 transition-colors cursor-default">Continuous Learner</span>
